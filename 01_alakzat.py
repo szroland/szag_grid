@@ -39,7 +39,7 @@ A táblázat méretét a grid.rows (sorok száma) és a grid.cols (oszlopok szá
 
 def sor_szinez(sor, szin):
     #❓ mi jön ide ❓
-    pass;
+    pass
 
 sor_szinez(5, 'darkgreen')
 sor_szinez(15, 'goldenrod')
