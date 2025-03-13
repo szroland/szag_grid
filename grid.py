@@ -2,6 +2,8 @@
 import sys
 import time
 import math
+import palette
+
 from os import environ
 environ['PYGAME_HIDE_SUPPORT_PROMPT'] = '1'
 environ['SDL_VIDEO_CENTERED'] = '1'
@@ -30,13 +32,6 @@ def get_screen() -> pgzero.screen.Screen:
 screen:pgzero.screen.Screen
 
 BACKGROUND = (220, 220, 220)
-COLORS = [
-    BACKGROUND,
-    (128, 0, 128),
-    (255, 0, 0),
-    (0, 255, 0),
-    (0, 0, 255),
-]
 
 class Position:
     def __init__(self, row: int = 0, col: int = 0):
@@ -50,7 +45,7 @@ class Position:
         return f"Position(row={self.row}, col={self.col})"
 
 class Grid:
-    def __init__(self, rows: int = 70, cols: int = 120, cell_size: int = 5, init_value = 0):
+    def __init__(self, rows: int = 70, cols: int = 120, cell_size: int = 5, init_value = 0, colors = None):
         self.rows = rows
         self.cols = cols
         self.cell_size = cell_size
@@ -67,8 +62,7 @@ class Grid:
         self.first_draw = True
         self.redraw = 0
         self.skip = 0
-
-        self.colors = COLORS
+        self.colors = colors if colors is not None else [BACKGROUND] + palette.generate_neon_palette(min(cols, rows))
 
         global grid
         grid = self
@@ -96,6 +90,11 @@ class Grid:
                 self.grid[r][c] = v
                 self.previous_grid[r][c] = r
 
+    def force_redraw(self):
+        for r in range(self.rows):
+            for c in range(self.cols):
+                self.previous_grid[r][c] = -1
+
     def draw(self):
         screen = get_screen()
         if self.first_draw:
@@ -111,10 +110,10 @@ class Grid:
                 if c != p:
 
                     if isinstance(c, int):
-                        if 0 <= c < len(self.colors):
-                            color_used = self.colors[c]
+                        if c == 0:
+                            color_used = self.colors[0]
                         else:
-                            color_used = "black"
+                            color_used = self.colors[1 + (c-1) % (len(self.colors)-1)]
                     else:
                         color_used = c
 
