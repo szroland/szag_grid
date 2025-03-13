@@ -33,9 +33,9 @@ def generate_pastel_palette(n=25, s = 0.5, v=0.9):
     """Generate soft pastel colors."""
     return generate_interpolated_hsv_palette(n, (0, 1), (s, s), (v, v))
 
-def generate_neon_palette(n=25):
+def generate_neon_palette(n=25, v=0.9):
     """Generate vibrant, neon-like colors."""
-    return generate_pastel_palette(n, 1, 1)
+    return generate_pastel_palette(n, 1, v)
 
 def generate_single_hue_palette(n=25, hue=0.6):
     """Generate vibrant, neon-like colors."""

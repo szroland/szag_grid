@@ -62,7 +62,7 @@ class Grid:
         self.first_draw = True
         self.redraw = 0
         self.skip = 0
-        self.colors = colors if colors is not None else [BACKGROUND] + palette.generate_neon_palette(min(cols, rows))
+        self.colors = colors if colors is not None else [BACKGROUND] + palette.generate_neon_palette(max(cols, rows))
 
         global grid
         grid = self
@@ -190,6 +190,22 @@ class KeyboardHelper:
     space: bool
 
 keyboard:KeyboardHelper
+
+@dataclass
+class KeysHelper:
+    LEFT: bool
+    RIGHT: bool
+    UP: bool
+    DOWN: bool
+    RETURN: bool
+    A: bool
+    B: bool
+    C: bool
+    D: bool
+    E: bool
+    F: bool
+
+keys: KeysHelper
 
 @dataclass
 class MouseHelper:

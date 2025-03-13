@@ -80,6 +80,19 @@ else:
     #nincs paraméter, marad a véletlenszerű kitöltés
     pass
 
+'''
+✅ 6. feladat (kihívás): állapot betöltése RLE fájlból
+pl:
+#N Glider
+x = 5, y = 5, rule = B3/S23
+bo$2bo$3o!
+
+#-kezdetű sorok: komment
+x, y: minta mérete
+b üres cella, o élő cella, ha szám van előtte, akkor a szám adja meg a darabszámát
+$ sor vége
+! a mint vége
+'''
 
 
 
