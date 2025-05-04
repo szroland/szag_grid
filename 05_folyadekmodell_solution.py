@@ -63,7 +63,7 @@ def lep():
 
     p = 0.5
     if grid[s][o]==1:
-        p = 0.45
+        p = 0.48
 
     #ds = veletlen_irany(0.2, 0.5)
     ds = randint(-1, 1)

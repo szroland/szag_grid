@@ -26,7 +26,8 @@ grid[8][2] = "darkgreen"
 grid[12][18] = (255, 128, 0)
 
 '''
-Feladat: ciklusok segítségével színezzük ki a táblázat mezőit. Az egyes színezések kerüljenek külön függvénybe!
+Feladat: ciklusok segítségével színezzük ki a táblázat mezőit. 
+Az egyes színezések kerüljenek külön függvénybe!
     1. ✅ egy adott sor legyen egy színű
     2. ✅ egyik átló egyik szín, másik átló másik szín
     3. ✅ a négy lehetséges háromszög (hozzá tartozó átlóval)

@@ -26,8 +26,7 @@ szinusz hullámban, stb.)
 A grid méreteit fentről leolvshatjuk, vagy a grid.rows (sorok száma) és a grid.cols (oszlopok száma) tartalmazza.
 '''
 def update(dt):
-    #❓ Mi jön ide, hogy mozogjon a pixel a képen ❓
-    pass
+    grid[20][20] = int(10 * time.time())
 
 '''
 A keretrendszer ún. callback függvényben értesít minket különböző eseményekről, pl. ha a felhasználó lenyomott
@@ -37,13 +36,13 @@ Az on_key_down akkor hívódik, amikor egy gombot lenyomnak, paraméterében ped
 A SPACE gomb kódja pl. 32
 
 ✅ Második feladat
-Az eseménykezelő segítségével érjük el, hogy az eddigi mozgás megfoduljon, visszafelé haladjon a pixel. Ehhez persze
+Az eseménykezelő segítségével érjük el, hogy az eddigi mozgás megforduljon, visszafelé haladjon a pixel. Ehhez persze
 az update függvényt is változtatnunk kell majd...
 '''
 def on_key_down(key):
     if key == 32:
         #❓ valamit tenni kellene, ha lenyomja a space-t...
-        pass;
+        pass
 
 '''
 Biztos nagyon érdekes mozgást találtál ki.
