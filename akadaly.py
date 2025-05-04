@@ -4,7 +4,7 @@ import random
 
 from grid import Grid, Position
 
-TITLE = "Automatikus mozgás"
+TITLE = "Akadály kerülgetés"
 grid = Grid(15, 130, 10)
 
 sor = 7

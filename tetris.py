@@ -1,7 +1,7 @@
 from grid import *
 from pygame.rect import Rect
 
-
+TITLE = "Tetris"
 grid = Grid(40, 30, 12)
 
 

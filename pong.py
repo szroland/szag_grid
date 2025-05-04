@@ -2,7 +2,7 @@ from grid import Grid
 import random
 
 # Játék konfiguráció
-CIM = "Pong"
+TITLE = "Pong"
 
 # Pálya méretei
 ROWS = 36  # Sorok száma
